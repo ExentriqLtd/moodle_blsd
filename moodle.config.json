@@ -1,6 +1,6 @@
 {
-    "app_id": "isda.exentriq.com",
-    "appname": "ISDA E-Learning",
+    "app_id": "blsd.exentriq.com",
+    "appname": "BLSD E-Learning",
     "versioncode": 1,
     "versionname": "2.0.0",
     "cache_update_frequency_usually": 420000,
@@ -39,8 +39,8 @@
         "high": 120
     },
     "customurlscheme": "moodlemobile",
-    "siteurl": "https:\/\/www.isdaelearning.com\/",
-    "sitename": "ISDA",
+    "siteurl": "https:\/\/www.blsdschool.com\/",
+    "sitename": "BLSD",
     "multisitesdisplay": "",
     "sitefindersettings": {},
     "onlyallowlistedsites": true,

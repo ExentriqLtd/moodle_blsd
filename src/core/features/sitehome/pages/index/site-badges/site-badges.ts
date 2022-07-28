@@ -71,7 +71,7 @@ export class CoreLoginSiteBadgesComponent {
 						}
 					}
 					
-					var url = "https://art001exe.exentriq.com/93489/getCert?rand=" + new Date().getTime();
+					var url = "https://art001exe.exentriq.com/93489/getBLSDCert?rand=" + new Date().getTime();
 					var payload = {
 						"name": firstname,
 						"surname": lastname,

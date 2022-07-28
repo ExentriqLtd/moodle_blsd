@@ -1,7 +1,7 @@
 {
-  "name": "isdamobile",
+  "name": "blsdmobile",
   "version": "2.0.0",
-  "description": "The official app for ISDA.",
+  "description": "The official app for BLSD.",
   "author": {
     "name": "Exentriq Ltd.",
     "email": "adriano@exentriq.com"
