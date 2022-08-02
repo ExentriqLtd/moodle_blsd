@@ -200,7 +200,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 				if(codeInput != null)
 					code = codeInput.value;
 				
-				var url = "isValidCode?code=" + code.replace("-","") + "&rand=" + new Date().getTime();
+				var url = "https://art001exe.exentriq.com/93489/isValidCode?code=" + code.replace("-","") + "&rand=" + new Date().getTime();
 				
 				fetch(url)
 					  .then(response => response.json())
