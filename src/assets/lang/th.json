@@ -775,5 +775,10 @@
     "home.nobadges": "ในหน้านี้ ใบรับรอง BLSD ของคุณอยู่ในรายการ<br/>หากคุณคิดว่าใบรับรองบางส่วนขาดหายไป โปรดติดต่อผู้สอนของคุณหรือเขียนถึง info@isdaitalia.it",
     "home.codenotvalid": "รหัสหลักสูตรไม่ถูกต้อง",
     "home.teachernotvalid": "รหัสผู้สอนไม่ถูกต้อง",
-    "core.badges": "ใบรับรอง"
+    "core.badges": "ใบรับรอง",
+    "core.settings.languagesettings": "เปลี่ยนภาษา",
+    "core.usercancellation": "การยกเลิกผู้ใช้",
+    "core.usercancellationpolicy": "คุณสามารถปิดบัญชีของคุณได้โดยส่งอีเมลไปที่ info@isdaitalia.it",
+    "core.deleteuser": "ยกเลิกบัญชี",
+    "core.deleteuserconfirmation": "คุณแน่ใจหรือไม่ว่าต้องการยกเลิกบัญชีของคุณ การดำเนินการนี้ไม่สามารถย้อนกลับได้"
 }

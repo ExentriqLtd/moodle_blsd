@@ -2258,5 +2258,10 @@
     "home.nobadges": "في هذه الصفحة يتم سرد شهادات BLSD الخاصة بك. <br/> إذا كنت تعتقد أن بعضها مفقود ، فيرجى الاتصال بمدرسك أو الكتابة",
     "home.codenotvalid": "رمز الدورة غير صالح",
     "home.teachernotvalid": "رمز المدرب غير صالح",
-    "core.badges": "الشهادات"
+    "core.badges": "الشهادات",
+    "core.settings.languagesettings": "تغيير اللغة",
+    "core.usercancellation": "إلغاء المستخدم",
+    "core.usercancellationpolicy": "يمكنك إغلاق حسابك بإرسال بريد إلكتروني إلى info@isdaitalia.it",
+    "core.deleteuser": "إلغاء حساب",
+    "core.deleteuserconfirmation": "هل أنت متأكد أنك تريد إلغاء حسابك؟ هذه العملية لا رجوع فيها"
 }

@@ -2259,5 +2259,10 @@
     "home.nobadges": "En esta página se enumeran sus certificaciones BLSD.<br/>Si cree que faltan algunas, comuníquese con su Instructor o escriba a info@isdaitalia.it",
     "home.codenotvalid": "El código del curso no es válido",
     "home.teachernotvalid": "Código de instructor no válido",
-    "core.badges": "Certificaciones"
+    "core.badges": "Certificaciones",
+    "core.settings.languagesettings": "Cambiar idioma",
+    "core.usercancellation": "Cancelación de usuario",
+    "core.usercancellationpolicy": "Puede cerrar su cuenta enviando un correo electrónico a info@isdaitalia.it",
+    "core.deleteuser": "Cancelar cuenta",
+    "core.deleteuserconfirmation": "¿Está seguro de que desea cancelar su cuenta? Esta operación es irreversible."
 }

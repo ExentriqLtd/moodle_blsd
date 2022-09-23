@@ -31,6 +31,8 @@ import { CoreNavigator } from '@services/navigator';
 import { CoreUtils } from '@services/utils/utils';
 import { CoreLoginSiteBadgesComponent } from './site-badges/site-badges';
 import { Translate } from '@singletons';
+import { CoreLang } from '@services/lang';
+
 /**
  * Page that displays site home index.
  */
@@ -89,7 +91,30 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
             CoreCourseHelper.openModule(module, this.siteHomeId, undefined, modParams);
         }
         
-
+		//Init Lang
+		CoreLang.getCurrentLanguage().then((lang) => {
+			console.log(`0...Init Lang `, lang);
+			const token = this.currentSite?.getToken();
+			const payload = {
+				token,
+				lang,
+				userId: this.currentSite?.getUserId(),
+			};
+			const url = 'https://art001exe.exentriq.com/93489/updateBLSDLanguage';
+			fetch(url, {
+				method: 'POST',
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(payload),
+			})
+				.then(response => response.json())
+				.then(data => {
+					console.log("Update Language ",lang);
+				});
+		});
+		
         this.loadContent().finally(() => {
             this.dataLoaded = true;
             
@@ -263,7 +288,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 				if(teachercode != null)
 				 	code = teachercode.value;
 				
-				var url = "https://art001exe.exentriq.com/93489/isValidBLSDTeacher ?code=" + code + "&course=" + window["courseId"] + "&rand=" + new Date().getTime();
+				var url = "https://art001exe.exentriq.com/93489/isValidBLSDTeacher?code=" + code + "&course=" + window["courseId"] + "&rand=" + new Date().getTime();
 				
 				fetch(url)
 					  .then(response => response.json())
