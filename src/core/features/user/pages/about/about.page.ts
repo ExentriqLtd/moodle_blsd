@@ -124,7 +124,7 @@ export class CoreUserAboutPage implements OnInit {
             userId: currentSite?.getUserId(),
         };
      
-        const url = 'https://art001exe.exentriq.com/93489/disableUser';
+        const url = 'https://art001exe.exentriq.com/93489/disableBLSDUser';
         fetch(url, {
                      method: 'POST',
                      headers: {
