@@ -530,7 +530,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
        
     }
     
-     async showBadgesNative(): void{
+     async showBadgesNative(): Promise<void> {
 			        
         let contentModal = await CoreDomUtils.openModal({
     		component: CoreLoginSiteBadgesComponent,
