@@ -2082,5 +2082,6 @@
     "core.course.instructor": "код учителя",
     "core.course.try_another_code": "Использовать другой код",
     "core.course.not_valid": "Извините, неправильный код",
-    "core.course.course_server_error": "Извините, возникла проблема при регистрации, попробуйте еще раз"
+    "core.course.course_server_error": "Извините, возникла проблема при регистрации, попробуйте еще раз",
+    "core.course.certifications": "Сертификаты"
 }

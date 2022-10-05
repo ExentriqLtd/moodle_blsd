@@ -2272,5 +2272,6 @@
     "core.course.instructor": "Instructeur",
     "core.course.try_another_code": "Utiliser un autre code",
     "core.course.not_valid": "Désolé, mauvais code",
-    "core.course.course_server_error": "Désolé, nous avons rencontré un problème lors de l'inscription, veuillez réessayer"
+    "core.course.course_server_error": "Désolé, nous avons rencontré un problème lors de l'inscription, veuillez réessayer",
+    "core.course.certifications": "Certificats"
 }

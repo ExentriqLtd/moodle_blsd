@@ -11,7 +11,7 @@
         (action)="manageCoursesStorage()" iconAction="fas-archive"></core-context-menu-item>
     </core-context-menu>
 </core-navbar-buttons>
-<ion-content>
+<ion-content class="moodle-native-2022">
     <ion-refresher slot="fixed" [disabled]="!dataLoaded" (ionRefresh)="doRefresh($event.target)">
         <ion-refresher-content pullingText="{{ 'core.pulltorefresh' | translate }}"></ion-refresher-content>
     </ion-refresher>
@@ -58,6 +58,10 @@
             </core-empty-box>
         </core-loading>
     </core-block-course-blocks>
+    
+    <ion-button (click)="showBadgesNative()" expand="block" type="submit" class="ion-margin core-login-login-button btn-certs">
+	        {{ 'core.course.certifications' | translate }}
+	</ion-button>
     
     <form id="step1native" class="mobilestepform" [formGroup]="couponForm" (ngSubmit)="validateCoupon($event)">
 	    <h4 id="isdaTitle1" class="isdaTitle">

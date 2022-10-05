@@ -160,25 +160,6 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 		            	showAfterUpgrade.style.display = "none";
 		            }
 		        
-		        
-		        async function showBadges(){
-			        
-			        let contentModal = await CoreDomUtils.openModal({
-	            		component: CoreLoginSiteBadgesComponent,
-	            		cssClass: 'core-modal-fullscreen',
-					});
-			        
-			    }
-		        
-		        var viewbadges = document.querySelector<HTMLElement>(".view-badges");
-	            if(viewbadges != null){
-					viewbadges.addEventListener("click", (e) => {
-						
-						showBadges();
-						
-					})
-						
-				}
 	        
 			},2000)
         });
@@ -548,6 +529,15 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 	    
        
     }
+    
+     async showBadgesNative(): void{
+			        
+        let contentModal = await CoreDomUtils.openModal({
+    		component: CoreLoginSiteBadgesComponent,
+    		cssClass: 'core-modal-fullscreen',
+		});
+			        
+	 }
     
     /**
      * Open settings.
