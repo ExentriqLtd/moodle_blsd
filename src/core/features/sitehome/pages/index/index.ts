@@ -367,7 +367,8 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 	    const coursecode = this.couponForm.value.coursecode;
 	     
 	    const url = "https://art001exe.exentriq.com/93489/isValidCode?code=" + coursecode.replace("-","") + "&rand=" + new Date().getTime();
-				
+			
+        const modal = await CoreDomUtils.showModalLoading();
 		fetch(url, {
 			method: 'GET',
 			headers: {
@@ -378,7 +379,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 			.then(response => response.json())
 			.then(data => {
 				console.log("Valid ",data);
-				
+				modal.dismiss();
 				if(data.valid){
 					
 					window["courseId"] = data.id;
@@ -415,7 +416,8 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 	    const courseinstructor = this.instructorForm.value.courseinstructor;
 	     
 	    const url = "https://art001exe.exentriq.com/93489/isValidBLSDTeacher?code=" + courseinstructor + "&course=" + window["courseId"] + "&rand=" + new Date().getTime();
-	    				
+	    	
+        const modal = await CoreDomUtils.showModalLoading();
 		fetch(url, {
 			method: 'GET',
 			headers: {
@@ -426,7 +428,7 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 			.then(response => response.json())
 			.then(data => {
 				console.log("Valid ",data);
-				
+				modal.dismiss();
 				if(data.valid){
 					window["dataTeacher"] = data;	
 					var step3 = document.querySelector<HTMLElement>("#step3native");
@@ -478,7 +480,9 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 		console.log("courseCode ", courseCode);
 		
 	    const url = "https://art001exe.exentriq.com/93489/enrolBLSD?teacherId=" + teacherId + "&teacherName=" + teacherName + "&courseId=" + window["courseId"] + "&studentId=" + studentId + "&couponId=" + couponId + "&courseCode=" + courseCode + "&rand=" + new Date().getTime();	    				
-		fetch(url, {
+		
+        const modal = await CoreDomUtils.showModalLoading();
+        fetch(url, {
 			method: 'GET',
 			headers: {
 				'Accept': 'application/json',
@@ -488,7 +492,8 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
 			.then(response => response.json())
 			.then(data => {
 				console.log("Valid ",data);
-								
+                modal.dismiss();
+                
 				if(data.status == "success"){
 					
 					var step3 = document.querySelector<HTMLElement>("#step2native");
