@@ -107,6 +107,12 @@ export class CoreSiteHomeIndexPage implements OnInit, OnDestroy {
             const modParams = CoreNavigator.getRouteParam<Params>('modParams');
             CoreCourseHelper.openModule(module, this.siteHomeId, undefined, modParams);
         }
+
+        console.log("0....CoreBlockDelegate_AddonBlockFeedback --> " + this.currentSite.isFeatureDisabled('CoreBlockDelegate_AddonBlockFeedback'));
+        if(this.currentSite.isFeatureDisabled('CoreBlockDelegate_AddonBlockFeedback')){
+            var step1Native = document.querySelector<HTMLElement>("#step1native");
+            if(step1Native) step1Native.style.display = "none";
+        }
         
 		//Init Lang
 		CoreLang.getCurrentLanguage().then((lang) => {
