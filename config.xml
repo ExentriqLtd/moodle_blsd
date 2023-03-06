@@ -40,7 +40,7 @@
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="android-minSdkVersion" value="22" />
-    <preference name="android-targetSdkVersion" value="30" />
+    <preference name="android-targetSdkVersion" value="31" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
     <preference name="CustomURLSchemePluginClearsAndroidIntent" value="true" />
@@ -89,7 +89,7 @@
         <resource-file src="resources/android/icon/mipmap-xxxhdpi-v26-ic_launcher_background.png" target="app/src/main/res/mipmap-xxxhdpi-v26/ic_launcher_background.png" />
         <resource-file src="resources/android/icon/mipmap-xxxhdpi-v26-ic_launcher_foreground.png" target="app/src/main/res/mipmap-xxxhdpi-v26/ic_launcher_foreground.png" />
         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application/activity[@android:name='MainActivity']">
-            <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|screenLayout|smallestScreenSize" />
+            <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|screenLayout|smallestScreenSize" android:exported="false" />
         </edit-config>
         <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:largeHeap="true" android:usesCleartextTraffic="true" />
@@ -234,9 +234,9 @@
         </config-file>
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <activity android:exported="true" android:name="com.adobe.phonegap.push.PushHandlerActivity" android:permission="${applicationId}.permission.PushHandlerActivity" />
-            <receiver android:name="com.adobe.phonegap.push.BackgroundActionButtonHandler" />
-            <receiver android:name="com.adobe.phonegap.push.PushDismissedHandler" />
-            <service android:name="com.adobe.phonegap.push.FCMService">
+            <receiver android:exported="false" android:name="com.adobe.phonegap.push.BackgroundActionButtonHandler" />
+            <receiver android:exported="false" android:name="com.adobe.phonegap.push.PushDismissedHandler" />
+            <service android:exported="false" android:name="com.adobe.phonegap.push.FCMService">
                 <intent-filter>
                     <action android:name="com.google.firebase.MESSAGING_EVENT" />
                 </intent-filter>
@@ -303,19 +303,19 @@
             <string>We need your location so you can attach it as part of your submissions.</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
-            <string>We need camera access to take pictures so you can attach them as part of your submissions.</string>
+            <string>We need camera access to take pictures so you can attach them as part of your submissions in the file section or you can use them as the picture of your profile</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSMicrophoneUsageDescription">
             <string>We need microphone access to record sounds so you can attach them as part of your submissions.</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
-            <string>We need photo library access to get pictures from there so you can attach them as part of your submissions.</string>
+            <string>We need photo library access to get pictures from there so you can attach them as part of your submissions in the file section or you can use them as the picture of your profile</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="UISupportsDocumentBrowser">
             <true />
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="CFBundleShortVersionString">
-            <string>2.0.0</string>
+            <string>2.0.7</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="overwrite" target="CFBundleLocalizations">
             <array>
