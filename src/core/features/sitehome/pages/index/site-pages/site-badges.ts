@@ -35,98 +35,96 @@ export class CoreLoginSiteBadgesComponent {
     canScanQR: boolean;
 
     constructor() {
-	    var noBadgeMsg = Translate.instant('home.nobadges');
-		var firstname = "";
-		 var viewbadges = document.querySelector<HTMLElement>(".view-badges");
-					if(viewbadges != null && viewbadges.attributes["data-firstname"] != null){
-						firstname = viewbadges.attributes["data-firstname"].value;
-					}
-					
-					var lastname = "";
-					if(viewbadges != null && viewbadges.attributes["data-lastname"] != null){
-						lastname = viewbadges.attributes["data-lastname"].value;
-					}
-					
-					var parseddate = "";
-					if(viewbadges != null && viewbadges.attributes["data-bd"] != null){
-						var bdate = viewbadges.attributes["data-bd"].value;
-						try{
-							var d = new Date(bdate);
-							var m = d.getMonth();
-							m++;
-							var month = m+"";
-							if(m < 10){
-								month = "0" + m;
-							}
-							
-							var g = d.getDate();
-							var day = g+"";
-							if(g < 10){
-								day = "0" + g;
-							}
-							parseddate = d.getFullYear() +"" + month  + "" + day; 
-							
-						}catch(e){
-							console.log(e);
-						}
-					}
-					
-					var url = "https://art001exe.exentriq.com/93489/getCert?rand=" + new Date().getTime();
-					var payload = {
-						"name": firstname,
-						"surname": lastname,
-						"birthDate":parseddate
-					}
-				
-					fetch(url, {
+	    const noBadgeMsg = Translate.instant('home.nobadges');
+        let firstname = '';
+		 const viewbadges = document.querySelector<HTMLElement>('.view-badges');
+        if(viewbadges != null && viewbadges.attributes['data-firstname'] != null){
+            firstname = viewbadges.attributes['data-firstname'].value;
+        }
+
+        let lastname = '';
+        if(viewbadges != null && viewbadges.attributes['data-lastname'] != null){
+            lastname = viewbadges.attributes['data-lastname'].value;
+        }
+
+        let parseddate = '';
+        if(viewbadges != null && viewbadges.attributes['data-bd'] != null){
+            const bdate = viewbadges.attributes['data-bd'].value;
+            try{
+                const d = new Date(bdate);
+                let m = d.getMonth();
+                m++;
+                let month = m+'';
+                if(m < 10){
+                    month = '0' + m;
+                }
+
+                const g = d.getDate();
+                let day = g+'';
+                if(g < 10){
+                    day = '0' + g;
+                }
+                parseddate = d.getFullYear() +'' + month  + '' + day;
+
+            }catch(e){
+                console.log(e);
+            }
+        }
+
+        const url = 'https://art001exe.exentriq.com/93489/getBLSDCert?rand=' + new Date().getTime();
+        const payload = {
+            name: firstname,
+            surname: lastname,
+            birthDate:parseddate,
+        };
+
+        fetch(url, {
 					    method: 'POST',
 					    headers: {
 					      'Accept': 'application/json',
-					      'Content-Type': 'application/json'
+					      'Content-Type': 'application/json',
 					    },
-					    body: JSON.stringify(payload)
+					    body: JSON.stringify(payload),
 					  })
 					  .then(response => response.json())
 					  .then(data => {
 					    // Handle data
-					    
+
 					    console.log(data);
-					    
-					    //modal.dismiss();
-					    
+
+					    // modal.dismiss();
+
 					    if(data && data.length > 0){
-				        	
-				        	var br2 = document.querySelector<HTMLElement>(".mybadges_result2");
+
+				        	var br2 = document.querySelector<HTMLElement>('.mybadges_result2');
 					        if(br2 != null){
-						       
-						       var html = "";
-						       for(var i=0; i < data.length; i++){
-							        
-							        html += "<div class='single_badge' style='margin-top: 10px;padding-top: 10px;border-top: 1px solid #ccc;'><div class='badge_img'><img src='" + data[i].Image + "'></div><div class='badge_desc' style='display:none'>" + data[i].Certification + "</div></div>";
-							        
-							        
+
+						       let html = '';
+						       for(let i=0; i < data.length; i++){
+
+							        html += '<div class=\'single_badge\' style=\'margin-top: 10px;padding-top: 10px;border-top: 1px solid #ccc;\'><div class=\'badge_img\'><img src=\'' + data[i].Image + '\'></div><div class=\'badge_desc\' style=\'display:none\'>' + data[i].Certification + '</div></div>';
+
 						        }
-						        
+
 						         br2.innerHTML = html;
-					        
+
 					        }
-					        
+
 				        }else{
-					        var br = document.querySelector<HTMLElement>(".mybadges_result2");
+					        const br = document.querySelector<HTMLElement>('.mybadges_result2');
 					        if(br != null){
-						        br.innerHTML = "<div class='noBadgeMsg' style='padding:20px'>" +  noBadgeMsg + "</div>";
+						        br.innerHTML = '<div class=\'noBadgeMsg\' style=\'padding:20px\'>' +  noBadgeMsg + '</div>';
 						    }
-						    
-						    var br2 = document.querySelector<HTMLElement>(".no-mybadges_result");
+
+						    var br2 = document.querySelector<HTMLElement>('.no-mybadges_result');
 					        if(br2 != null){
-						        br2.style.display = "block";
+						        br2.style.display = 'block';
 						    }
-						    
+
 				        }
-					
-					})  
-					
-					
+
+            });
+
         this.canScanQR = CoreUtils.canScanQR();
         this.urlImageHtml = CoreLoginHelperProvider.FAQ_URL_IMAGE_HTML;
         this.qrCodeImageHtml = CoreLoginHelperProvider.FAQ_QRCODE_IMAGE_HTML;
@@ -138,9 +136,9 @@ export class CoreLoginSiteBadgesComponent {
      * Close help modal.
      */
     closeHelp(): void {
-	    var br2 = document.querySelector<HTMLElement>(".no-mybadges_result");
+	    const br2 = document.querySelector<HTMLElement>('.no-mybadges_result');
         if(br2 != null){
-	         br2.style.display = "none";
+	         br2.style.display = 'none';
 	    }
         ModalController.dismiss();
     }
