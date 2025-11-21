@@ -89,7 +89,7 @@ export class CoreDashboardHomeHandlerService implements CoreMainMenuHomeHandler 
      */
     getDisplayData(): CoreMainMenuHomeHandlerToDisplay {
         return {
-            title: 'core.courses.mymoodle',
+            title: 'core.courses.mycourses',
             page: CoreDashboardHomeHandlerService.PAGE_NAME,
             class: 'core-courses-dashboard-handler',
             icon: 'fas-gauge-high',
